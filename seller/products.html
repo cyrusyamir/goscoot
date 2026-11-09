@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller products — GoScoot</title>
+  <meta name="description" content="Manage prices, stock and availability for your local shop on GoScoot.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#176B45', dark: '#0F4F32', light: '#E8F3EC' },
+            lime: { DEFAULT: '#C6E86B', dark: '#A9D94D' },
+            ink: '#202820',
+            canvas: '#F8FAF6'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans">
+  <div id="seller-header"></div>
+
+  <main class="mx-auto max-w-7xl px-4">
+    <section class="pt-8">
+      <nav class="flex items-center gap-1.5 text-xs font-semibold text-slate-400">
+        <a href="../index.html" class="hover:text-brand">Customer store</a>
+        <i data-lucide="chevron-right" class="h-3 w-3"></i>
+        <a href="dashboard.html" class="hover:text-brand">Seller dashboard</a>
+        <i data-lucide="chevron-right" class="h-3 w-3"></i>
+        <span class="text-slate-600">Products</span>
+      </nav>
+
+      <div class="mt-3 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h1 class="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">Your products</h1>
+          <p id="sellerProductsSubtitle" class="mt-1 text-sm text-slate-500">You set the price, stock and availability. GoScoot only delivers.</p>
+        </div>
+        <button type="button" id="addProductBtn" class="inline-flex w-fit items-center gap-1.5 rounded-xl bg-brand px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-dark">
+          <i data-lucide="plus" class="h-4 w-4"></i> Add product
+        </button>
+      </div>
+
+      <div class="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div id="sellerProductFilters" class="no-scrollbar flex gap-2 overflow-x-auto pb-1"></div>
+        <form id="sellerProductSearch" class="flex items-center gap-2 rounded-full border border-emerald-900/10 bg-white px-4 py-2">
+          <i data-lucide="search" class="h-4 w-4 shrink-0 text-slate-400"></i>
+          <input id="sellerProductQuery" name="q" type="search" placeholder="Search your products…"
+            class="w-full bg-transparent text-sm text-ink outline-none placeholder:text-slate-400 sm:w-52">
+        </form>
+      </div>
+
+      <p id="sellerProductCount" class="mt-4 text-xs font-semibold uppercase tracking-wider text-slate-400"></p>
+      <div id="sellerProducts" class="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-2"></div>
+    </section>
+  </main>
+
+  <div id="seller-footer"></div>
+
+  <script src="../assets/js/seed.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/seller.js"></script>
+  <script src="../assets/js/pages/seller-products.js"></script>
+</body>
+</html>

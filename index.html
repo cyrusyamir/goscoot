@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoScoot — Local shops, delivered</title>
+  <meta name="description" content="Browse independent local shops in Lucknow, compare prices and get your order delivered by GoScoot.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#176B45', dark: '#0F4F32', light: '#E8F3EC' },
+            lime: { DEFAULT: '#C6E86B', dark: '#A9D94D' },
+            ink: '#202820',
+            canvas: '#F8FAF6'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-pattern relative overflow-hidden bg-brand text-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 md:grid-cols-2 md:py-16">
+        <div class="fade-up">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-lime ring-1 ring-white/15">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-lime"></span>
+            Delivering across Lucknow
+          </span>
+          <h1 class="mt-4 font-display text-4xl font-extrabold leading-[1.08] tracking-tight md:text-5xl">
+            Your local shops.<br>
+            <span class="text-lime">Delivered in minutes.</span>
+          </h1>
+          <p class="mt-4 max-w-lg text-sm leading-relaxed text-white/80 md:text-base">
+            Compare prices from independent neighbourhood stores and let GoScoot pick up and deliver.
+            We don't own the shops — we just get your order to your door fast.
+          </p>
+
+          <form id="heroSearch" class="mt-6 flex max-w-lg items-center gap-2 rounded-full bg-white p-1.5 pl-4 shadow-lg shadow-black/10">
+            <i data-lucide="search" class="h-4 w-4 shrink-0 text-slate-400"></i>
+            <input name="q" type="search" placeholder="What do you need today?"
+              class="w-full bg-transparent py-1 text-sm text-ink outline-none placeholder:text-slate-400">
+            <button type="submit" class="shrink-0 rounded-full bg-lime px-4 py-2 text-sm font-bold text-brand-dark transition hover:bg-lime-dark">
+              Search
+            </button>
+          </form>
+
+          <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-white/70">
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="store" class="h-3.5 w-3.5 text-lime"></i> 6 local shops</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="package" class="h-3.5 w-3.5 text-lime"></i> 30+ products</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="timer" class="h-3.5 w-3.5 text-lime"></i> 15–45 min delivery</span>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="relative hidden md:block">
+          <div class="absolute -left-6 top-6 z-10 rounded-2xl bg-white p-4 text-ink shadow-2xl shadow-black/20">
+            <div class="flex items-center gap-3">
+              <div class="emoji-tile h-12 w-12 text-xl">🏪</div>
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Order from</p>
+                <p class="text-sm font-extrabold">Sharma General Store</p>
+                <p class="text-[11px] text-slate-500">2 items · ₹124</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ml-auto w-[86%] rounded-3xl bg-white p-5 text-ink shadow-2xl shadow-black/25">
+            <div class="flex items-center justify-between">
+              <p class="font-display text-base font-extrabold">Your cart</p>
+              <span class="rounded-full bg-brand-light px-2 py-0.5 text-[10px] font-bold text-brand">2 sellers</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center gap-3 rounded-xl bg-canvas p-2.5">
+                <div class="emoji-tile h-10 w-10 text-lg">🥛</div>
+                <div class="flex-1">
+                  <p class="text-xs font-bold">Amul Toned Milk</p>
+                  <p class="text-[10px] text-slate-400">Gupta Dairy · 1 L</p>
+                </div>
+                <p class="text-xs font-extrabold text-brand">₹64</p>
+              </div>
+              <div class="flex items-center gap-3 rounded-xl bg-canvas p-2.5">
+                <div class="emoji-tile h-10 w-10 text-lg">🍚</div>
+                <div class="flex-1">
+                  <p class="text-xs font-bold">Basmati Rice</p>
+                  <p class="text-[10px] text-slate-400">Sharma Store · 1 kg</p>
+                </div>
+                <p class="text-xs font-extrabold text-brand">₹60</p>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between border-t border-dashed border-emerald-900/10 pt-3">
+              <span class="text-xs text-slate-500">Total</span>
+              <span class="font-display text-lg font-extrabold text-brand">₹149</span>
+            </div>
+            <div class="mt-3 rounded-xl bg-brand py-2 text-center text-xs font-bold text-white">Place order</div>
+          </div>
+
+          <div class="absolute -bottom-4 left-0 z-10 flex items-center gap-2 rounded-full bg-lime px-4 py-2 text-xs font-extrabold text-brand-dark shadow-xl shadow-black/20">
+            <i data-lucide="bike" class="h-4 w-4"></i>
+            Out for delivery · 12 min away
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="mx-auto max-w-7xl px-4 pt-10">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">Shop by category</h2>
+          <p class="mt-1 text-sm text-slate-500">Everything from your neighbourhood, in one place.</p>
+        </div>
+        <a href="products.html" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:underline sm:flex">
+          All products <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div id="categoryRow" class="no-scrollbar mt-4 flex gap-3 overflow-x-auto pb-2"></div>
+    </section>
+
+    <!-- Popular shops -->
+    <section class="mx-auto max-w-7xl px-4 pt-12">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">Popular local shops</h2>
+          <p class="mt-1 text-sm text-slate-500">Independent sellers near you, rated by customers.</p>
+        </div>
+        <a href="shops.html" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:underline sm:flex">
+          View all shops <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div id="shopGrid" class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- Deals -->
+    <section class="mx-auto max-w-7xl px-4 pt-12">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">Best deals nearby</h2>
+          <p class="mt-1 text-sm text-slate-500">Same product, different sellers. Pick the best price.</p>
+        </div>
+        <a href="products.html?sort=discount" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:underline sm:flex">
+          All deals <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div id="dealGrid" class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"></div>
+    </section>
+
+    <!-- Popular products -->
+    <section class="mx-auto max-w-7xl px-4 pt-12">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">Popular products</h2>
+          <p class="mt-1 text-sm text-slate-500">Available from multiple sellers — compare before you buy.</p>
+        </div>
+        <a href="products.html" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:underline sm:flex">
+          Browse all <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div id="productGrid" class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"></div>
+    </section>
+
+    <!-- How it works -->
+    <section class="mx-auto max-w-7xl px-4 pt-14">
+      <div class="overflow-hidden rounded-3xl bg-white p-6 ring-1 ring-emerald-900/10 md:p-10">
+        <div class="max-w-xl">
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">How GoScoot works</h2>
+          <p class="mt-1 text-sm text-slate-500">One platform, three simple steps. We coordinate the ride; your local seller handles the products.</p>
+        </div>
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <div class="rounded-2xl bg-canvas p-5 ring-1 ring-emerald-900/5">
+            <div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-lime"><i data-lucide="search" class="h-5 w-5"></i></div>
+            <p class="mt-4 text-xs font-bold uppercase tracking-wider text-brand">Step 1</p>
+            <h3 class="mt-1 font-display text-base font-extrabold">Find your shop</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500">Browse nearby sellers and compare prices for the exact same product.</p>
+          </div>
+          <div class="rounded-2xl bg-canvas p-5 ring-1 ring-emerald-900/5">
+            <div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-lime"><i data-lucide="shopping-bag" class="h-5 w-5"></i></div>
+            <p class="mt-4 text-xs font-bold uppercase tracking-wider text-brand">Step 2</p>
+            <h3 class="mt-1 font-display text-base font-extrabold">Pick your seller</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500">Add items from one or more shops. Your cart keeps every seller separate.</p>
+          </div>
+          <div class="rounded-2xl bg-canvas p-5 ring-1 ring-emerald-900/5">
+            <div class="grid h-11 w-11 place-items-center rounded-xl bg-brand text-lime"><i data-lucide="bike" class="h-5 w-5"></i></div>
+            <p class="mt-4 text-xs font-bold uppercase tracking-wider text-brand">Step 3</p>
+            <h3 class="mt-1 font-display text-base font-extrabold">GoScoot delivers</h3>
+            <p class="mt-1 text-sm leading-relaxed text-slate-500">We collect the packed order from each shop and bring it to your doorstep.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently added -->
+    <section class="mx-auto max-w-7xl px-4 pt-12">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">Recently added</h2>
+          <p class="mt-1 text-sm text-slate-500">Fresh listings from local sellers this week.</p>
+        </div>
+        <a href="products.html?sort=new" class="hidden shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:underline sm:flex">
+          See more <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div id="recentGrid" class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/seed.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/pages/home.js"></script>
+</body>
+</html>
